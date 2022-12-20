@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+               Total cases
+            </div>
+            <div class="value" id="confirm">
+                <h3 style='font-size:50px;' *ngIf="caseSummarysss.hasOwnProperty('totalCases')"> {{caseSummarysss.totalCases }} &#9716;</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                Total closed
+            </div>
+            <div class="value" id="recovered">
+                <h3 style='font-size:50px;' *ngIf="caseSummarysss.hasOwnProperty('totalClosed')"> {{caseSummarysss.totalClosed}} &#8593;</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                Total Cases Today
+            </div>
+            <div class="value" id="death">
+                <h3 style='font-size:50px;' *ngIf="caseSummarysss.hasOwnProperty('totalCaseToday')"> {{caseSummarysss.totalCaseToday}} &#8623; </h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                Survey
+            </div>
+            <div class="value" id="death">
+                <h3 style='font-size:50px;' *ngIf="caseSummarysss.hasOwnProperty('totalSurvey')"> {{caseSummarysss.totalSurvey
+                }} &#9760; </h3>
+            </div>
+        </div>
+
+    </div>
+
+</div>

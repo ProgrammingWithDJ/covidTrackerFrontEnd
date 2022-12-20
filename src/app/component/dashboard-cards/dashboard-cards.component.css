@@ -1,0 +1,15 @@
+.value {
+    font-size: 12px;
+}
+
+#death {
+    color: red;
+}
+
+#recovered {
+    color: green;
+}
+
+#confirm {
+    color: orange;
+}
