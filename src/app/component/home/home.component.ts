@@ -75,8 +75,10 @@ public columnChart: GoogleChartInterface = {
   ngOnInit(): void {
 
   this.testUnsubscribe=  this.dataservice.getGlobalData().subscribe((data: any[])=>{
-         this.users=data['Global'];
-         this.countries=data['Countries'];
+         this.caseSummary=data;
+        console.warn(this.caseSummary);
+         
+       //  this.countries=data['Countries'];
 
 
         // this.NewDeaths= this.users.NewDeaths;
@@ -94,52 +96,53 @@ this.loadLineChart('c');
 
 
   }
-  ngOnDestroy() {
+  ngOnDestroy() {0
     this.testUnsubscribe.unsubscribe();
   }
   loadLineChart(caseType:String){
     let datatable=[];
     let datlabels=[];
 
-    //datatable.push(["Country","Cases"])
-    this.countries.forEach(cs=>{
+
+    // check individual cases based on users
+    datatable.push(["Cases", "Kio"])
+//     this.countries.forEach(cs=>{
 
 
-           //default block statement;
-           if(caseType==='c')
-           if(cs.TotalConfirmed>2000000)
-      datatable.push(
-    cs.TotalConfirmed),
-    datlabels.push(
-      cs.Country
-      )
+//            //default block statement;
+          if(caseType==='c')
+//            if(cs.TotalConfirmed>2000000)
+       datatable.push(99),datlabels.push("")
+      datatable.push(33),datlabels.push("Total Cases")
+      datatable.push(10),datlabels.push("Total Closed")
+      ,datlabels.push("Total Survey")
 
-      if(caseType==='r')
-      if(cs.TotalRecovered>200000)
- datatable.push(
-cs.TotalRecovered),
-datlabels.push(
- cs.Country
- )
+//       if(caseType==='r')
+//       if(cs.TotalRecovered>200000)
+//  datatable.push(
+// cs.TotalRecovered),
+// datlabels.push(
+//  cs.Country
+//  )
 
- if(caseType==='a')
- if(cs.TotalRecovered>200000)
-datatable.push(
-cs.NewDeaths),
-datlabels.push(
-cs.Country
-)
+//  if(caseType==='a')
+//  if(cs.TotalRecovered>200000)
+// datatable.push(
+// cs.NewDeaths),
+// datlabels.push(
+// cs.Country
+// )
 
-if(caseType==='d')
-if(cs.TotalRecovered>200000)
-datatable.push(
-cs.TotalDeaths),
-datlabels.push(
-cs.Country
-)
+// if(caseType==='d')
+// if(cs.TotalRecovered>200000)
+// datatable.push(
+// cs.TotalDeaths),
+// datlabels.push(
+// cs.Country
+// )
 
 
-    })
+//     })
 
     var myChart = new Chart("myChartline", {
       type: 'bar',
@@ -184,44 +187,44 @@ cs.Country
     let datatable=[];
     let datlabels=[];
     //datatable.push(["Country","Cases"])
-    this.countries.forEach(cs=>{
+//     this.countries.forEach(cs=>{
 
 
-           //default block statement;
-           if(caseType==='c')
-           if(cs.TotalConfirmed>200000)
-      datatable.push(
-    cs.TotalConfirmed),
-    datlabels.push(
-      cs.Country
-      )
+//            //default block statement;
+//            if(caseType==='c')
+//            if(cs.TotalConfirmed>200000)
+//       datatable.push(
+//     cs.TotalConfirmed),
+//     datlabels.push(
+//       cs.Country
+//       )
 
-      if(caseType==='r')
-      if(cs.TotalRecovered>200000)
- datatable.push(
-cs.TotalRecovered),
-datlabels.push(
- cs.Country
- )
+//       if(caseType==='r')
+//       if(cs.TotalRecovered>200000)
+//  datatable.push(
+// cs.TotalRecovered),
+// datlabels.push(
+//  cs.Country
+//  )
 
- if(caseType==='a')
- if(cs.TotalRecovered>200000)
-datatable.push(
-cs.NewDeaths),
-datlabels.push(
-cs.Country
-)
+//  if(caseType==='a')
+//  if(cs.TotalRecovered>200000)
+// datatable.push(
+// cs.NewDeaths),
+// datlabels.push(
+// cs.Country
+// )
 
-if(caseType==='d')
-if(cs.TotalRecovered>200000)
-datatable.push(
-cs.TotalDeaths),
-datlabels.push(
-cs.Country
-)
+// if(caseType==='d')
+// if(cs.TotalRecovered>200000)
+// datatable.push(
+// cs.TotalDeaths),
+// datlabels.push(
+// cs.Country
+// )
 
 
-    })
+//     })
 
     var myChart = new Chart("myChart", {
       type: 'bar',
